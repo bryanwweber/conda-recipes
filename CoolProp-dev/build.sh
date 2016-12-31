@@ -1,4 +1,4 @@
 #! /bin/bash
 
-cd wrappers/Python
-$PYTHON setup.py install
+pushd wrappers/Python
+${PYTHON} setup.py install --cmake-bitness ${ARCH}
