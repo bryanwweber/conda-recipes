@@ -9,20 +9,17 @@ source:
     - setuppy.patch  # [win]
 
 build:
-  number: 0
+  number: 1
 
 requirements:
   build:
-    - python
+    - python >=2.7,<3|>=3.3,{{PY_VER}}*
     - setuptools
     - cython
     - cmake
 
   run:
-    - python
-    - numpy
-    # - matplotlib
-    # - scipy
+    - python {{PY_VER}}*
 
 test:
   imports:
@@ -30,6 +27,10 @@ test:
     - CoolProp.GUI
     # - CoolProp.Plots
     - CoolProp.tests
+
+  commands:
+    - python -c "from CoolProp.CoolProp import PropsSI; print(PropsSI('Phase', 'T', 300.0, 'P', 101325.0, 'Water'))"  # [py3k]
+    - python -c "from CoolProp.CoolProp import PropsSI; print PropsSI('Phase', 'T', 300.0, 'P', 101325.0, 'Water')"  # [py2k]
 
 about:
   home: http://www.coolprop.org
