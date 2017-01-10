@@ -9,7 +9,7 @@ source:
     - setuppy.patch  # [win]
 
 build:
-  number: 1
+  number: 2
 
 requirements:
   build:
@@ -29,8 +29,7 @@ test:
     - CoolProp.tests
 
   commands:
-    - python -c "from CoolProp.CoolProp import PropsSI; print(PropsSI('Phase', 'T', 300.0, 'P', 101325.0, 'Water'))"  # [py3k]
-    - python -c "from CoolProp.CoolProp import PropsSI; print PropsSI('Phase', 'T', 300.0, 'P', 101325.0, 'Water')"  # [py2k]
+    - python -c "from CoolProp.CoolProp import PropsSI; assert PropsSI('Phase', 'T', 300.0, 'P', 101325.0, 'Water') == 0.0"
 
 about:
   home: http://www.coolprop.org
