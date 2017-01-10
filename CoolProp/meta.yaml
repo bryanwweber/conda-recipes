@@ -21,8 +21,8 @@ requirements:
   run:
     - python
     - numpy
-    - matplotlib
-    - scipy
+    # - matplotlib
+    # - scipy
 
 test:
   imports:
