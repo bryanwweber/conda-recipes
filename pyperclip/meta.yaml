@@ -1,0 +1,40 @@
+{% set name = "pyperclip" %}
+{% set version = "1.5.27" %}
+{% set sha256 = "a3cb6df5d8f1557ca8fc514d94fabf50dc5a97042c90e5ba4f3611864fed3fc5" %}
+
+package:
+  name: {{ name|lower }}
+  version: {{ version }}
+
+source:
+  fn: {{ name }}-{{ version }}.zip
+  url: https://pypi.python.org/packages/7b/a5/48eaa1f2d77f900679e9759d2c9ab44895e66e9612f7f6b5333273b68f29/pyperclip-1.5.27.zip
+  sha256: {{ sha256 }}
+
+build:
+  number: 0
+  script: python setup.py install --single-version-externally-managed --record=record.txt
+
+requirements:
+  build:
+    - python
+    - setuptools
+
+  run:
+    - python
+
+test:
+  # Python imports
+  imports:
+    - pyperclip
+
+  source_files:
+    - tests/test_copy_paste.py
+
+  commands:
+    - python tests/test_copy_paste.py
+
+about:
+  home: https://github.com/asweigart/pyperclip
+  license: BSD
+  summary: 'Python module for cross-platform clipboard functions.'
