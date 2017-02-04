@@ -1,0 +1,29 @@
+{% set name = "pandoc-eqnos" %}
+{% set version = "0.16" %}
+{% set sha256 = "1adad0101d01a5b3fc0080e594a0d5218f380f16126a00c8e1efb77a192dff88" %}
+
+package:
+  name: {{ name|lower }}
+  version: {{ version }}
+
+source:
+  fn: {{ name }}-{{ version }}.tar.gz
+  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  sha256: {{ sha256 }}
+
+build:
+  number: 0
+  script: python setup.py install --single-version-externally-managed --record=record.txt
+
+requirements:
+  build:
+    - python
+    - setuptools
+
+  run:
+    - python
+
+about:
+  home: https://github.com/tomduck/pandoc-eqnos
+  license: GPL-3.0
+  summary: 'A pandoc filter for numbering equations and equation references.'

@@ -1,0 +1,29 @@
+{% set name = "pandoc-fignos" %}
+{% set version = "0.20" %}
+{% set sha256 = "26e6164292661704982657f3a1ab775c1a6bae7d7018f8a5144a11dce3eb7078" %}
+
+package:
+  name: {{ name|lower }}
+  version: {{ version }}
+
+source:
+  fn: {{ name }}-{{ version }}.tar.gz
+  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  sha256: {{ sha256 }}
+
+build:
+  number: 0
+  script: python setup.py install --single-version-externally-managed --record=record.txt
+
+requirements:
+  build:
+    - python
+    - setuptools
+
+  run:
+    - python
+
+about:
+  home: https://github.com/tomduck/pandoc-fignos
+  license: GPL-3.0
+  summary: 'A pandoc filter for numbering figures and figure references.'
