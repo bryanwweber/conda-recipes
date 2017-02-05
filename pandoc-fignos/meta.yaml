@@ -22,6 +22,9 @@ requirements:
 
   run:
     - python
+    - pandocfilters
+    - pandoc-xnos >=0.8.2
+    - pandoc-attributes
 
 about:
   home: https://github.com/tomduck/pandoc-fignos

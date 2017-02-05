@@ -1,6 +1,6 @@
-{% set name = "pandoc-tablenos" %}
-{% set version = "0.16" %}
-{% set sha256 = "a3fdedea2bcfa01dd3856f833acf6c76632976c4a439887ec0db82d73a1666f5" %}
+{% set name = "pandoc-xnos" %}
+{% set version = "0.9" %}
+{% set sha256 = "eb8939aa912e58a64e28a40d21800479b4bd6ef1c83eb13adfe3f42c032f276a" %}
 
 package:
   name: {{ name|lower }}
@@ -22,11 +22,15 @@ requirements:
 
   run:
     - python
-    - pandocfilters
-    - pandoc-xnos >=0.8.2
-    - pandoc-attributes
+    - pandocfilters >=1.4.0
+    - pandoc-attributes >=0.1.7
+    - psutil >=4.1.0
+
+test:
+  imports:
+    - pandocxnos
 
 about:
-  home: https://github.com/tomduck/pandoc-tablenos
+  home: https://github.com/tomduck/pandoc-eqnos
   license: GPL-3.0
-  summary: 'A pandoc filter for numbering tables and table references.'
+  summary: 'A pandoc filter for numbering equations and equation references.'
