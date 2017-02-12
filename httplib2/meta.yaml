@@ -1,30 +1,19 @@
+{% set name = "httplib2" %}
+{% set version = "0.10.3" %}
+{% set sha256 = "e404d3b7bd86c1bc931906098e7c1305d6a3a6dcef141b8bb1059903abb3ceeb" %}
+
 package:
-  name: httplib2
-  version: "0.9.2"
+  name: {{ name|lower }}
+  version: {{ version }}
 
 source:
-  fn: httplib2-0.9.2.tar.gz
-  url: https://pypi.python.org/packages/ff/a9/5751cdf17a70ea89f6dde23ceb1705bfb638fd8cee00f845308bf8d26397/httplib2-0.9.2.tar.gz
-  md5: bd1b1445b3b2dfa7276b09b1a07b7f0e
-#  patches:
-   # List any patch files here
-   # - fix.patch
+  fn: {{ name }}-{{ version }}.tar.gz
+  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  sha256: {{ sha256 }}
 
-# build:
-  # noarch_python: True
-  # preserve_egg_dir: True
-  # entry_points:
-    # Put any entry points (scripts to be generated automatically) here. The
-    # syntax is module:function.  For example
-    #
-    # - httplib2 = httplib2:main
-    #
-    # Would create an entry point called httplib2 that calls httplib2.main()
-
-
-  # If this is a new build for the same version, increment the build
-  # number. If you do not include this key, it defaults to 0.
-  # number: 1
+build:
+  number: 0
+  script: python setup.py install --single-version-externally-managed --record=record.txt
 
 requirements:
   build:
@@ -35,27 +24,10 @@ requirements:
     - python
 
 test:
-  # Python imports
   imports:
     - httplib2
-
-  # commands:
-    # You can put test commands to be run here.  Use this to test that the
-    # entry points work.
-
-
-  # You can also put a file called run_test.py in the recipe that will be run
-  # at test time.
-
-  # requires:
-    # Put any additional test requirements here.  For example
-    # - nose
 
 about:
   home: https://github.com/jcgregorio/httplib2
   license: MIT License
   summary: 'A comprehensive HTTP client library.'
-
-# See
-# http://docs.continuum.io/conda/build.html for
-# more information about meta.yaml
