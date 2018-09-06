@@ -1,0 +1,6 @@
+python:
+  - 3.5
+  - 3.6
+  - 3.7
+CONDA_BUILD_SYSROOT:
+  - /opt/MacOSX10.9.sdk  # [osx]
