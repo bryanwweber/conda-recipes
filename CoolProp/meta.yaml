@@ -9,6 +9,7 @@ source:
   git_branch: update-submodules-conda
   patches:
     - setuppy.patch  # [win]
+    - setuppy-macos.patch  # [osx]
 
 build:
   number: 3
