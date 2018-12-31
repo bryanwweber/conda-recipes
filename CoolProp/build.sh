@@ -1,4 +1,4 @@
 #! /bin/bash
 
 pushd wrappers/Python
-${PYTHON} setup.py install --cmake-bitness ${ARCH} --cmake-compiler default
+${PYTHON} setup.py install cmake=default,${ARCH}
