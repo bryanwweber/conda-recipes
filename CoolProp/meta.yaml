@@ -39,4 +39,9 @@ test:
 about:
   home: http://www.coolprop.org
   license: MIT License
-  summary: 'Open-source thermodynamic and transport properties database'
+  summary: "Open-source thermodynamic and transport properties database"
+  description: "CoolProp is a thermophysical property database and wrappers for a selection of programming environments. It offers similar functionality to REFPROP, but CoolProp is open-source and free"
+  license_file: LICENSE
+  license_family: MIT
+  doc_url: http://coolprop.org
+  dev_url: https://github.com/coolprop/coolprop
