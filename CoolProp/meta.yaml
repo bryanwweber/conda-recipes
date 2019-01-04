@@ -1,4 +1,4 @@
-{% set version = "6.2.0" %}
+{% set version = "6.2.1" %}
 
 package:
   name: coolprop
@@ -6,7 +6,8 @@ package:
 
 source:
   git_url: https://github.com/bryanwweber/CoolProp
-  git_tag: v6.2.0
+  # This is version 6.2.1, but it isn't tagged
+  git_tag: 81dbcb71c512b5d57cdfe197e59ae87f0221e4e6
   patches:
     - setuppy-macos.patch  # [osx]
 
