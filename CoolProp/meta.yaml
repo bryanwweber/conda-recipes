@@ -16,16 +16,17 @@ build:
 
 requirements:
   build:
+    - {{ compiler('c') }}
     - {{ compiler('cxx') }}
     - cmake
     - git
   host:
-    - python {{ python }}
+    - python
     - setuptools
     - cython
 
   run:
-    - python {{PY_VER}}*
+    - python
 
 test:
   imports:
