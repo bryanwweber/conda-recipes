@@ -10,6 +10,7 @@ source:
   git_tag: 81dbcb71c512b5d57cdfe197e59ae87f0221e4e6
   patches:
     - setuppy-macos.patch  # [osx]
+    - CMakeLists-python.patch
 
 build:
   number: 0
